@@ -1,0 +1,26 @@
+h1 Listing pages
+
+table.table.table-striped
+  thead
+    tr
+      th Title
+      th Slug
+      th Author
+      th Created date
+      th Updated date
+      th
+
+  tbody
+    - @pages.each do |page|
+      tr
+        td = page.title
+        td = page.slug
+        td = page.author
+        td = l page.created_at, format: :short
+        td = l page.updated_at, format: :short
+        td(style="width: 20%")
+          = link_to "Show", page, class: "btn btn-default btn-xs"
+          = link_to "Edit", edit_page_path(page), class: "btn btn-primary btn-xs"
+          = link_to "Destroy", page, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs"
+
+= link_to  "New Page", new_page_path, class: "btn btn-primary"
