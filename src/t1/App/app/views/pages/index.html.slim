@@ -1,13 +1,14 @@
-h1 Listing pages
+h1 #{t "activerecord.models.page", count: 2}
+
 
 table.table.table-striped
   thead
     tr
-      th Title
-      th Slug
-      th Author
-      th Created date
-      th Updated date
+      th = t "activerecord.attributes.page.title"
+      th = t "activerecord.attributes.page.slug"
+      th = t "activerecord.attributes.page.author"
+      th = t "activerecord.attributes.updated_at"
+      th = t "activerecord.attributes.created_at"
       th
 
   tbody
@@ -23,4 +24,4 @@ table.table.table-striped
           = link_to "Edit", edit_page_path(page), class: "btn btn-primary btn-xs"
           = link_to "Destroy", page, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs"
 
-= link_to  "New Page", new_page_path, class: "btn btn-primary"
+= link_to t("new", model: Page.model_name.human), new_page_path, class: "btn btn-primary"

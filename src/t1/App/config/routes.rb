@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  root "pages#index"
+  root 'pages#index'
 
-  resources :pages
+  scope '(/:locale)' do
+    resources :pages
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
