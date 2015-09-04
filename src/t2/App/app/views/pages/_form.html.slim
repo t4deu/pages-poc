@@ -1,0 +1,13 @@
+= simple_form_for(@page) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :slug
+    = f.input :description
+    = f.input :body
+    = f.input :author
+
+  .form-actions
+    = f.button :submit, class: "btn btn-primary"
+    = link_to t("cancel"), pages_path, class: "btn btn-default"

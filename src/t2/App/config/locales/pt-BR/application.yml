@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    models:
+      page:
+        one: Página
+        other: Páginas
+    attributes:
+      page:
+        title: Título
+        slug: Slug
+        description: Descrição
+        body: Conteúdo
+        author: Autor
+
+      created_at: Criado em
+      updated_at: Alterado em
+
+  edit: Editar %{model}
+  new: Nova %{model}
+  cancel: Cancelar
+  by: em

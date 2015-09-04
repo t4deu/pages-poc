@@ -1,0 +1,10 @@
+- cache @page
+  .page
+    h1 = @page.title
+
+    p.page-meta
+      | #{l @page.updated_at, format: :long} #{t "by"} 
+      strong = @page.author
+
+    .body
+      = markdown @page.body
