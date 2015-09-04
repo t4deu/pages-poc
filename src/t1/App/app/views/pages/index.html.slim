@@ -1,27 +1,28 @@
-h1 #{t "activerecord.models.page", count: 2}
+- cache cache_key_for_pages do
+  h1 #{t "activerecord.models.page", count: 2}
 
 
-table.table.table-striped
-  thead
-    tr
-      th = t "activerecord.attributes.page.title"
-      th = t "activerecord.attributes.page.slug"
-      th = t "activerecord.attributes.page.author"
-      th = t "activerecord.attributes.updated_at"
-      th = t "activerecord.attributes.created_at"
-      th
-
-  tbody
-    - @pages.each do |page|
+  table.table.table-striped
+    thead
       tr
-        td = page.title
-        td = page.slug
-        td = page.author
-        td = l page.created_at, format: :short
-        td = l page.updated_at, format: :short
-        td(style="width: 20%")
-          = link_to "Show", page, class: "btn btn-default btn-xs"
-          = link_to "Edit", edit_page_path(page), class: "btn btn-primary btn-xs"
-          = link_to "Destroy", page, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs"
+        th = t "activerecord.attributes.page.title"
+        th = t "activerecord.attributes.page.slug"
+        th = t "activerecord.attributes.page.author"
+        th = t "activerecord.attributes.updated_at"
+        th = t "activerecord.attributes.created_at"
+        th
 
-= link_to t("new", model: Page.model_name.human), new_page_path, class: "btn btn-primary"
+    tbody
+      - @pages.each do |page|
+        tr
+          td = page.title
+          td = page.slug
+          td = page.author
+          td = l page.created_at, format: :short
+          td = l page.updated_at, format: :short
+          td(style="width: 20%")
+            = link_to "Show", page, class: "btn btn-default btn-xs"
+            = link_to "Edit", edit_page_path(page), class: "btn btn-primary btn-xs"
+            = link_to "Destroy", page, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs"
+
+  = link_to t("new", model: Page.model_name.human), new_page_path, class: "btn btn-primary"
